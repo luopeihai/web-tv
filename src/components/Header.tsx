@@ -1,3 +1,4 @@
+import { AiOutlineSearch } from "react-icons/ai";
 import './Header.css';
 import logo from "./logo.png"
 import avatar from "./avatar.jpg"
@@ -10,7 +11,7 @@ function Header() {
         <div className="center">
             <form className="search-box">
                 <input />
-                <button>搜索</button>
+                <button><AiOutlineSearch /></button>
             </form>
         </div>
         <div className="right">
