@@ -1,6 +1,6 @@
 import { AiOutlineStar, AiOutlineHeart } from "react-icons/ai";
 
-import './Home.css';
+import './Home.scss';
 
 function Home() {
     return <div className="container">
