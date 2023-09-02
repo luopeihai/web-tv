@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import { AiOutlineStar, AiOutlineHeart } from "react-icons/ai";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
@@ -24,13 +24,13 @@ class Home extends Component<IHome, {}> {
 
     renderItem = (item: any, index: number) => {
         return item && <div className="item" key={`${item.name}-${index}`}>
-            <img className="cover" src={item.image.medium} alt="cover" />
+            <img className="cover" src={item.image?.medium} alt="cover" />
             <h3>{item.name}</h3>
             <p className="type">{item.type}</p>
             <div className="bottom">
                 <div className="bottom-left">
                     <AiOutlineStar />
-                    <span>{item.rating.average}</span>
+                    <span>{item.rating?.average}</span>
                 </div>
                 <div className="bottom-right">
                     <AiOutlineHeart />
