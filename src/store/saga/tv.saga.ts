@@ -1,7 +1,8 @@
-import { takeEvery } from "redux-saga/effects";
+import { takeEvery, put } from "redux-saga/effects";
 import axios from "axios";
 import {
-  fetchTVData
+  fetchTVData,
+  loadTVData
 } from "../actions/tv.actions";
 
 function* handleFetchTVData() {
@@ -9,8 +10,7 @@ function* handleFetchTVData() {
   const { data } = yield axios.get(
     "https://api.tvmaze.com/shows"
   );
-  console.log(data)
-
+  yield put(loadTVData(data));
 }
 
 

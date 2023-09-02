@@ -3,12 +3,18 @@ import {
     loadTVData,
 } from "../actions/tv.actions";
 
-const initialState: any[] = [];
+interface IInitialState {
+    data: any[]
+}
+
+const initialState: IInitialState = {
+    data: []
+}
 
 function handleFetchTVData(state: any, action: any) {
     return {
         ...state,
-        ...action.payload
+        data: action.payload
     }
 }
 
