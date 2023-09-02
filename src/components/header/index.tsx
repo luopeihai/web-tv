@@ -1,5 +1,5 @@
 import { AiOutlineSearch } from "react-icons/ai";
-import './Header.css';
+import './index.scss';
 import logo from "./logo.png"
 import avatar from "./avatar.jpg"
 
