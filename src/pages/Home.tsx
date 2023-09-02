@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { AiOutlineStar, AiOutlineHeart } from "react-icons/ai";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import VirtualizedList from "../components/VirtualizedList";
+import TVList from "../components/TVList";
 import * as TVActions from "../store/actions/tv.actions";
 import './Home.scss';
 
@@ -22,9 +22,7 @@ class Home extends Component<IHome, {}> {
         fetchTVData();
     }
 
-    renderItem = (index: number) => {
-        const { infoTV } = this.props
-        const item = infoTV.data[index]
+    renderItem = (item: any, index: number) => {
         return item && <div className="item" key={`${item.name}-${index}`}>
             <img className="cover" src={item.image.medium} alt="cover" />
             <h3>{item.name}</h3>
@@ -39,32 +37,15 @@ class Home extends Component<IHome, {}> {
                 </div>
             </div>
         </div>
-
-        // const { infoTV } = this.props
-        // const list = infoTV.data[index]
-        // return list.map((item: any, subIndex: number) => <div className="item" key={`${item.name}-${subIndex}`}>
-        //     <img className="cover" src={item.image.medium} alt="cover" />
-        //     <h3>{item.name}</h3>
-        //     <p className="type">{item.type}</p>
-        //     <div className="bottom">
-        //         <div className="bottom-left">
-        //             <AiOutlineStar />
-        //             <span>{item.rating.average}</span>
-        //         </div>
-        //         <div className="bottom-right">
-        //             <AiOutlineHeart />
-        //         </div>
-        //     </div>
-        // </div>)
     }
 
     render() {
         const { infoTV } = this.props
-        const itemCount = (infoTV.data || []).length
+        const data = (infoTV.data || [])
 
         return <div className="container">
-            <section >
-                <VirtualizedList rowCount={4} containerHeight={700} itemCount={itemCount} itemHeight={300} renderItem={this.renderItem} />
+            <section  >
+                <TVList data={data} renderItem={this.renderItem} />
             </section>
         </div>
     }
