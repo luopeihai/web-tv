@@ -6,7 +6,7 @@ import avatar from "./avatar.jpg"
 function Header() {
     return <header className="header">
         <div className="left">
-            <img src={logo} alt="Logo" />;
+            <img src={logo} alt="Logo" />
         </div>
         <div className="center">
             <form className="search-box">
