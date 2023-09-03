@@ -15,7 +15,7 @@ function App() {
   return (
     <Provider store={store} >
       <div className="app">
-        <Router basename={process.env.PUBLIC_BASENAME}>
+        <Router basename={process.env.PUBLIC_TEST}>
           <Header />
           <Switch>
             <Route exact path="/" component={Home} />
