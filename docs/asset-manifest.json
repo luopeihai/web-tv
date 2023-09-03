@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/web-tv/static/css/main.dab4ee71.css",
-    "main.js": "/web-tv/static/js/main.b91b6fe7.js",
-    "static/js/787.087904e9.chunk.js": "/web-tv/static/js/787.087904e9.chunk.js",
-    "static/media/avatar.jpg": "/web-tv/static/media/avatar.19a62f2df9426e4b30b8.jpg",
-    "index.html": "/web-tv/index.html",
-    "main.dab4ee71.css.map": "/web-tv/static/css/main.dab4ee71.css.map",
-    "main.b91b6fe7.js.map": "/web-tv/static/js/main.b91b6fe7.js.map",
-    "787.087904e9.chunk.js.map": "/web-tv/static/js/787.087904e9.chunk.js.map"
+    "main.css": "web-tv/static/css/main.dab4ee71.css",
+    "main.js": "web-tv/static/js/main.89bc1bf8.js",
+    "static/js/787.087904e9.chunk.js": "web-tv/static/js/787.087904e9.chunk.js",
+    "static/media/avatar.jpg": "web-tv/static/media/avatar.19a62f2df9426e4b30b8.jpg",
+    "index.html": "web-tv/index.html",
+    "main.dab4ee71.css.map": "web-tv/static/css/main.dab4ee71.css.map",
+    "main.89bc1bf8.js.map": "web-tv/static/js/main.89bc1bf8.js.map",
+    "787.087904e9.chunk.js.map": "web-tv/static/js/787.087904e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dab4ee71.css",
-    "static/js/main.b91b6fe7.js"
+    "static/js/main.89bc1bf8.js"
   ]
 }
