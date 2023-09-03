@@ -45,7 +45,7 @@ const TVList = ({ data = [], renderItem, pageSize = 10 }: ITVList) => {
     }, []);
 
     return <>
-        <div ref={myRef} className="movie-list">
+        <div ref={myRef} className="row">
             {list.map((item, index) => renderItem(item, index))}
         </div>
         {loading && <h2 className="loading">loading...</h2>}

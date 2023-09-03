@@ -32,7 +32,7 @@ function* handleSearchTVData(action: any) {
 function* handleFetchDetail(action: any) {
   const { data = {} } = yield get(
     `/shows/${action.payload}`,
-    { embed: "episodes" }
+    { embed: "cast" }
   );
   yield put(loadDetail(data));
 }

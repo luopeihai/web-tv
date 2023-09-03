@@ -1,9 +1,10 @@
 import { Component } from "react";
-import { AiOutlineStar, AiOutlineHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import TVList from "../../components/TVList";
+import Rating from "../../components/rating"
 import * as TVActions from "../../store/actions/tv.actions";
 import './index.scss';
 
@@ -23,15 +24,14 @@ class Home extends Component<IHome, {}> {
         fetchTVData();
     }
 
-    renderItem = (item: any) => <div className="item" key={item.id}>
+    renderItem = (item: any) => <div className="col-md-3 item" key={item.id}>
         <Link to={`shows/${item.id}`}>
             <img className="cover" src={item.image?.medium} alt="cover" />
             <h3>{item.name}</h3>
             <p className="type">{item.type}</p>
             <div className="bottom">
                 <div className="bottom-left">
-                    <AiOutlineStar />
-                    <span>{item.rating?.average}</span>
+                    <Rating average={item.rating?.average} />
                 </div>
                 <div className="bottom-right">
                     <AiOutlineHeart />
