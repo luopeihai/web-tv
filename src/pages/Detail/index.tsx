@@ -5,21 +5,24 @@ import { connect } from "react-redux";
 import * as TVActions from "../../store/actions/tv.actions";
 import './index.scss';
 
-interface Props {
-    id?: string
+interface Props extends RouteComponentProps<{ id: string }> {
+    fetchDetail: (id: string) => void,
+    detail: any
 }
 
-class Detail extends Component<RouteComponentProps<Props>, {}> {
+
+class Detail extends Component<Props, {}> {
 
     componentDidMount() {
-        const { id } = this.props.match.params;
-        console.log(id)
+        const { match, fetchDetail } = this.props
+        const { id } = match.params
+        fetchDetail(id);
     }
 
-
-
     render() {
-        return <div className="container">
+        const { detail } = this.props
+        console.log('detail', detail)
+        return <div className="detail-content">
             详情
         </div>
     }
@@ -27,7 +30,7 @@ class Detail extends Component<RouteComponentProps<Props>, {}> {
 
 
 const mapStateToProps = (state: any) => ({
-    infoTV: state.tv,
+    detail: state.tv.detail
 });
 
 const mapDispatchToProps = (dispatch: any) =>

@@ -3,7 +3,9 @@ import { get } from "../../common/axios";
 import {
   fetchTVData,
   searchTVData,
-  loadTVData
+  loadTVData,
+  loadDetail,
+  fetchDetail
 } from "../actions/tv.actions";
 
 function* handleFetchTVData() {
@@ -27,9 +29,18 @@ function* handleSearchTVData(action: any) {
 
 }
 
+function* handleFetchDetail(action: any) {
+  const { data = {} } = yield get(
+    `/shows/${action.payload}`,
+    { embed: "episodes" }
+  );
+  yield put(loadDetail(data));
+}
+
 
 export default function* TVSaga() {
   yield takeEvery(fetchTVData, handleFetchTVData);
   yield takeEvery(searchTVData, handleSearchTVData);
+  yield takeEvery(fetchDetail, handleFetchDetail);
 
 }

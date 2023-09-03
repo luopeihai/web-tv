@@ -8,3 +8,9 @@ export const searchTVData = createAction("searchTVData");
 
 // load TV shows
 export const loadTVData = createAction("loadTVData");
+
+// search TV show detail
+export const fetchDetail = createAction("fetchDetail");
+
+// load TV show detail
+export const loadDetail = createAction("loadDetail");
