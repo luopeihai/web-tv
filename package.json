@@ -5,7 +5,8 @@
   "homepage": "https://luopeihai.github.io/web-tv",
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js && npm run copy",
+    "build": "node scripts/build.js",
+    "build:github": "cross-env PUBLIC_URL='web-tv' node scripts/build.js && npm run copy",
     "copy": "copyfiles -u 1 'build/**/*' docs/",
     "test": "node scripts/test.js"
   },

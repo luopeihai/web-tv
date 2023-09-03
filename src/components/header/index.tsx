@@ -2,7 +2,7 @@ import { Component } from "react"
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { AiOutlineSearch } from "react-icons/ai";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import * as TVActions from "../../store/actions/tv.actions";
 import './index.scss';
 import logo from "./logo.png"
@@ -47,9 +47,9 @@ class Header extends Component<IHeaderProps, IHeaderStates> {
     render() {
         return <header className="header">
             <div className="left">
-                {/* <Link to="/"> */}
-                <img src={logo} alt="Logo" />
-                {/* </Link> */}
+                <Link to="/">
+                    <img src={logo} alt="Logo" />
+                </Link>
             </div>
             <div className="center">
                 <form className="search-box" onSubmit={this.handleSubmit}>
