@@ -2,7 +2,7 @@
   "name": "web-tv",
   "version": "0.1.0",
   "private": true,
-  "homepage": "./",
+  "homepage": "https://luopeihai.github.io/web-tv",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
