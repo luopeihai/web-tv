@@ -1,18 +1,26 @@
 import { useState, useEffect, ReactNode, useRef } from "react"
 import "./index.scss"
 
+/**
+ * pageSize 一页 render 的item 数量
+ * data 全量列表信息
+ * renderItem 渲染 item 
+ */
 interface ITVList {
     pageSize?: number;
     data: any[];
     renderItem: (item: any, index: number) => ReactNode
 }
-
+/**
+ * 滚动列表 
+ */
 const TVList = ({ data = [], renderItem, pageSize = 10 }: ITVList) => {
     const [pageIndex, setPageIndex] = useState<number>(0)
     const [loading, setLoading] = useState<boolean>(false)
     const [list, setList] = useState<any[]>([])
     const myRef = useRef<HTMLDivElement | null>(null);
 
+    // 监听页数 添加list data
     useEffect(function () {
         const dataLength = data.length
         const lastIndex = pageIndex === 0 ? pageSize : pageIndex * pageSize + pageSize
@@ -26,6 +34,7 @@ const TVList = ({ data = [], renderItem, pageSize = 10 }: ITVList) => {
             const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
             const windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
             const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+            // 当快到底部200px 累加页数
             if (scrollTop + windowHeight + 200 > scrollHeight) {
                 setPageIndex((index) => index + 1)
                 setLoading(true)

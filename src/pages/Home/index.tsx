@@ -2,9 +2,10 @@ import { Component } from "react";
 import { AiOutlineStar, AiOutlineHeart } from "react-icons/ai";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import TVList from "../components/TVList";
-import * as TVActions from "../store/actions/tv.actions";
-import './Home.scss';
+import { Link } from "react-router-dom";
+import TVList from "../../components/TVList";
+import * as TVActions from "../../store/actions/tv.actions";
+import './index.scss';
 
 interface IHome {
     fetchTVData: () => void,
@@ -22,8 +23,8 @@ class Home extends Component<IHome, {}> {
         fetchTVData();
     }
 
-    renderItem = (item: any, index: number) => {
-        return item && <div className="item" key={`${item.name}-${index}`}>
+    renderItem = (item: any) => <div className="item" key={item.id}>
+        <Link to={`shows/${item.id}`}>
             <img className="cover" src={item.image?.medium} alt="cover" />
             <h3>{item.name}</h3>
             <p className="type">{item.type}</p>
@@ -36,8 +37,8 @@ class Home extends Component<IHome, {}> {
                     <AiOutlineHeart />
                 </div>
             </div>
-        </div>
-    }
+        </Link>
+    </div>
 
     render() {
         const { infoTV } = this.props
