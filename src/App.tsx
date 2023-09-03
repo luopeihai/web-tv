@@ -18,7 +18,8 @@ function App() {
         <Router>
           <Header />
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route path="/" component={Home} />
+            <Route path="/home" component={Home} />
             <Route path="/shows/:id" component={Detail} />
           </Switch>
         </Router>
