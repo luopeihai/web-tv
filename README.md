@@ -6,6 +6,13 @@ The github address of this project[https://github.com/luopeihai/web-tv](https://
 
 You can access the dome address online [https://luopeihai.github.io/web-tv/](https://luopeihai.github.io/web-tv/).
 
+
+### Features
+* tv list page
+* search tv page
+* follow tv show
+* tv page Detail
+
 ## Available Scripts
 
 In the project directory, you can run:
