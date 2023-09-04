@@ -17,7 +17,7 @@ const Image = ({ src = "", alt = "", ...rest }: ImageProps) => {
         const imgDom = imageRef.current
         if (imgDom) imgDom.classList.add("error")
     }
-    return <img ref={imageRef} src={src} alt={alt} {...rest} onError={handleError} />
+    return <img ref={imageRef} src={src} alt={alt} loading="lazy" {...rest} onError={handleError} />
 }
 
 export default Image
