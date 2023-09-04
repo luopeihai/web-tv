@@ -6,7 +6,7 @@ import "./index.scss"
  * data 全量列表信息
  * renderItem 渲染 item 
  */
-interface ITVList {
+interface ListProps {
     pageSize?: number;
     data: any[];
     renderItem: (item: any, index: number) => ReactNode
@@ -14,7 +14,7 @@ interface ITVList {
 /**
  * 滚动列表 
  */
-const TVList = ({ data = [], renderItem, pageSize = 10 }: ITVList) => {
+const List = ({ data = [], renderItem, pageSize = 10 }: ListProps) => {
     const [pageIndex, setPageIndex] = useState<number>(0)
     const [loading, setLoading] = useState<boolean>(false)
     const [list, setList] = useState<any[]>([])
@@ -55,4 +55,4 @@ const TVList = ({ data = [], renderItem, pageSize = 10 }: ITVList) => {
 
 }
 
-export default TVList
+export default List

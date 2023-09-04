@@ -6,8 +6,8 @@ import {
 } from "react-router-dom";
 import { store } from "./store";
 import Header from "./components/header"
-import Home from "./pages/Home"
-import Detail from "./pages/Detail"
+import Home from "./pages/home"
+import Detail from "./pages/detail"
 import './App.scss';
 
 

@@ -46,19 +46,21 @@ class Header extends Component<IHeaderProps, IHeaderStates> {
 
     render() {
         return <header className="header">
-            <div className="left">
-                <Link to="/">
-                    <img src={logo} alt="Logo" />
-                </Link>
-            </div>
-            <div className="center">
-                <form className="search-box" onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleChange} />
-                    <button><AiOutlineSearch /></button>
-                </form>
-            </div>
-            <div className="right">
-                <img src={avatar} alt="avatar" />
+            <div className="header-content">
+                <div className="left">
+                    <Link to="/">
+                        <img src={logo} alt="Logo" />
+                    </Link>
+                </div>
+                <div className="center">
+                    <form className="search-box" onSubmit={this.handleSubmit}>
+                        <input onChange={this.handleChange} />
+                        <button><AiOutlineSearch /></button>
+                    </form>
+                </div>
+                <div className="right">
+                    <img src={avatar} alt="avatar" />
+                </div>
             </div>
         </header >
     }
