@@ -6,17 +6,18 @@ import { connect } from "react-redux";
 import Rating from "../../components/rating"
 import Image from "../../components/image"
 import * as TVActions from "../../store/actions/tv.actions";
+import { ShowTVInfo } from "../../common/types";
 import './index.scss';
 
-interface Props extends RouteComponentProps<{ id: string }> {
+interface DetailProps extends RouteComponentProps<{ id: string }> {
     fetchDetail: (id: string) => void,
-    detail: any
+    detail: ShowTVInfo
 }
 
 /**
  * tv show detail
  */
-class Detail extends Component<Props, {}> {
+class Detail extends Component<DetailProps, {}> {
 
     componentDidMount() {
         const { match, fetchDetail } = this.props
@@ -24,6 +25,7 @@ class Detail extends Component<Props, {}> {
         fetchDetail(id);
     }
 
+    // render cast list
     renderCastItem = (item: any, index: number) => {
         const person = item?.person
         if (!person) return null
@@ -47,7 +49,7 @@ class Detail extends Component<Props, {}> {
 
 
     render() {
-        const { detail = {} } = this.props
+        const { detail } = this.props
         const image = detail.image?.original || ""
         const castList = detail._embedded?.cast || []
 

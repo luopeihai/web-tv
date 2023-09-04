@@ -19,18 +19,18 @@ interface IHeaderStates {
 
 
 
-
+// 头部组件
 class Header extends Component<IHeaderProps, IHeaderStates> {
 
     constructor(props: IHeaderProps) {
         super(props)
         this.state = {
-            value: ""
+            value: "" // input value值     
         }
     }
 
 
-
+    // 触发请求数据
     handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         const { value } = this.state
         const { searchTVData } = this.props
@@ -38,6 +38,7 @@ class Header extends Component<IHeaderProps, IHeaderStates> {
         value.length > 0 && searchTVData(value)
     }
 
+    // 监听输入
     handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
             value: event.target.value

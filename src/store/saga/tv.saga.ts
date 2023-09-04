@@ -5,8 +5,11 @@ import {
   searchTVData,
   loadTVData,
   loadDetail,
-  fetchDetail
+  fetchDetail,
+  ActionType
 } from "../actions/tv.actions";
+
+
 
 function* handleFetchTVData() {
 
@@ -16,7 +19,7 @@ function* handleFetchTVData() {
   yield put(loadTVData(data));
 }
 
-function* handleSearchTVData(action: any) {
+function* handleSearchTVData(action: ActionType) {
 
   const { data = [] } = yield get(
     "/search/shows",
@@ -29,7 +32,7 @@ function* handleSearchTVData(action: any) {
 
 }
 
-function* handleFetchDetail(action: any) {
+function* handleFetchDetail(action: ActionType) {
   const { data = {} } = yield get(
     `/shows/${action.payload}`,
     { embed: "cast" }

@@ -7,12 +7,16 @@ import List from "../../components/list";
 import Rating from "../../components/rating"
 import Image from "../../components/image"
 import * as TVActions from "../../store/actions/tv.actions";
+import { ShowTVInfo } from "../../common/types";
 import './index.scss';
 
-interface IHome {
+interface HomeProps {
+    /**
+     * redux fetch data
+     */
     fetchTVData: () => void,
     infoTV: {
-        data: any[]
+        data: ShowTVInfo[]
     }
 }
 
@@ -20,14 +24,14 @@ interface IHome {
 /**
  * 首页
  */
-class Home extends Component<IHome, {}> {
+class Home extends Component<HomeProps, {}> {
 
     componentDidMount() {
         const { fetchTVData } = this.props;
         fetchTVData();
     }
 
-    renderItem = (item: any) => <div className="col-md-3 item" key={item.id}>
+    renderItem = (item: ShowTVInfo) => <div className="col-md-3 item" key={item.id}>
         <Link to={`shows/${item.id}`}>
             <Image className="cover" src={item.image?.medium} alt="cover" />
             <h3>{item.name}</h3>
@@ -57,7 +61,7 @@ class Home extends Component<IHome, {}> {
 
 
 const mapStateToProps = (state: any) => ({
-    infoTV: state.tv,
+    infoTV: state.tv
 });
 
 const mapDispatchToProps = (dispatch: any) =>

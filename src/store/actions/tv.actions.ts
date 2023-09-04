@@ -14,3 +14,8 @@ export const fetchDetail = createAction("fetchDetail");
 
 // load TV show detail
 export const loadDetail = createAction("loadDetail");
+
+
+export interface ActionType {
+    payload: string
+}

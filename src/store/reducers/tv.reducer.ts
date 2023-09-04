@@ -1,21 +1,22 @@
 import { handleActions } from "redux-actions";
+import { ShowTVInfo } from "../../common/types/index.d"
 import {
     loadTVData,
     loadDetail
 } from "../actions/tv.actions";
 
-interface IInitialState {
-    data: any[]
-    detail: any
+interface InitialStateType {
+    data: ShowTVInfo[]
+    detail: ShowTVInfo | {}
 }
 
-const initialState: IInitialState = {
+const initialState: InitialStateType = {
     data: [],
     detail: {}
 }
 
 // load list data
-function handleLoadTVData(state: any, action: any) {
+function handleLoadTVData(state: InitialStateType, action: any) {
     const data = action.payload || []
     return {
         ...state,
@@ -24,7 +25,7 @@ function handleLoadTVData(state: any, action: any) {
 }
 
 // load detail
-function handleLoadDetail(state: any, action: any) {
+function handleLoadDetail(state: InitialStateType, action: any) {
     const detail = action.payload || {}
     return {
         ...state,

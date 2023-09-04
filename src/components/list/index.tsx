@@ -50,7 +50,6 @@ const List = ({ data = [], renderItem, pageSize = 10 }: ListProps) => {
         </div>
         {loading && <h2 className="loading">loading...</h2>}
         {!data.length && <div className="empty"><h2>Not found data.</h2></div>}
-
     </>
 
 }

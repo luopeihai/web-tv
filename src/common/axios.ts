@@ -30,6 +30,7 @@ fetch.interceptors.response.use(
     },
 )
 
+// post 请求
 export function post(url: string, data = {}, params = {}) {
     return fetch({
         method: 'post',
@@ -39,6 +40,7 @@ export function post(url: string, data = {}, params = {}) {
     })
 }
 
+// get 请求
 export function get(url: string, params = {}) {
     return fetch({
         method: 'get',
