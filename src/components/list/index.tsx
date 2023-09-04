@@ -1,4 +1,4 @@
-import { useState, useEffect, ReactNode, useRef } from "react"
+import { useState, useEffect, ReactNode } from "react"
 import "./index.scss"
 
 /**
@@ -18,7 +18,7 @@ const List = ({ data = [], renderItem, pageSize = 10 }: ListProps) => {
     const [pageIndex, setPageIndex] = useState<number>(0)
     const [loading, setLoading] = useState<boolean>(false)
     const [list, setList] = useState<any[]>([])
-    const myRef = useRef<HTMLDivElement | null>(null);
+
 
     // 监听页数 添加list data
     useEffect(function () {
@@ -45,7 +45,7 @@ const List = ({ data = [], renderItem, pageSize = 10 }: ListProps) => {
     }, []);
 
     return <>
-        <div ref={myRef} className="row">
+        <div className="row">
             {list.map((item, index) => renderItem(item, index))}
         </div>
         {loading && <h2 className="loading">loading...</h2>}

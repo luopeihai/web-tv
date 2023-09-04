@@ -2,10 +2,13 @@
   padding-bottom: 40px;
   color: #fff;
   .left-box {
-    line-height: 14px;
+    line-height: 16px;
     .detail-cover {
       width: 100%;
     }
+  }
+  .summary {
+    font-size: 16px;
   }
   .detail-summary {
     margin-bottom: 20px;
@@ -42,8 +45,9 @@
       .cast-item-right {
         padding-left: 10px;
         flex: 1;
+        font-size: 18px;
         .name {
-          font-size: 24px;
+          font-size: 22px;
         }
       }
     }

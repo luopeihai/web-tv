@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 import { AiOutlineLink } from "react-icons/ai";
 import { connect } from "react-redux";
 import Rating from "../../components/rating"
+import Image from "../../components/image"
 import * as TVActions from "../../store/actions/tv.actions";
 import './index.scss';
 
@@ -32,7 +33,7 @@ class Detail extends Component<Props, {}> {
 
         return <div key={index} className="col-md-4 cast-item">
             <div className="cast-item-img">
-                <img src={image?.medium} alt="cast-avatar" />
+                <Image src={image?.medium} alt="cast-avatar" />
             </div>
             <div className="cast-item-right" >
                 <a href={url} target="_blank" className="name" rel="noreferrer" > {name}</a>
@@ -58,10 +59,10 @@ class Detail extends Component<Props, {}> {
                             <h2>{detail.name}</h2>
                             <div className="row ">
                                 <div className="col-sm-6 left-box">
-                                    <img src={image} className="detail-cover" alt="cover" />
+                                    <Image src={image} className="detail-cover" alt="cover" />
                                 </div>
                                 <div className="col-sm-6">
-                                    {detail.summary && <p
+                                    {detail.summary && <p className="summary"
                                         dangerouslySetInnerHTML={{ __html: detail.summary }}
                                     />}
                                 </div>
