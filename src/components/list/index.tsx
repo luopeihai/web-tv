@@ -8,7 +8,7 @@ import "./index.scss"
  */
 interface ListProps {
     pageSize?: number;
-    data: any[];
+    data: unknown[];
     renderItem: (item: any, index: number) => ReactNode
 }
 /**
@@ -17,7 +17,7 @@ interface ListProps {
 const List = ({ data = [], renderItem, pageSize = 10 }: ListProps) => {
     const [pageIndex, setPageIndex] = useState<number>(0)
     const [loading, setLoading] = useState<boolean>(false)
-    const [list, setList] = useState<any[]>([])
+    const [list, setList] = useState<unknown[]>([])
 
 
     // 监听页数 添加list data
