@@ -2,8 +2,10 @@ import { handleActions } from "redux-actions";
 import { ShowTVInfo } from "../../common/types/index.d"
 import {
     loadTVData,
-    loadDetail
+    loadDetail,
 } from "../actions/tv.actions";
+
+
 
 interface InitialStateType {
     data: ShowTVInfo[]
